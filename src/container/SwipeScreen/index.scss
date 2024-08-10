@@ -1,0 +1,291 @@
+@import "../../assets/scss/variables.scss";
+
+.swipescreen-wrapper{
+    .swipescreen-wrapper-inner{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2vh;
+        .swap-title{
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        .swipescreen-main{
+            width: 100%;
+            max-width: 320px;
+            position: relative;
+            margin-top: 10px;
+            .action-btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                bottom: 0;
+                height: 64px;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                right: 0;
+                border-top: 1px solid $border-color-base;
+                .ant-btn{
+                    width: 50%;
+                    border: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    text-align: center;
+                    color: $black !important;
+                    box-shadow: none !important;
+                    border: 0;
+                    background: none;
+                    outline: none !important;
+                    font-size: 1.2rem;
+                    &:first-child{
+                        border-right: 1px solid $border-color-base;
+                    }
+                    .icon{
+                        width: 32px;
+                        margin-right: 8px;
+                    }
+                    &.like-btn{
+                        .icon{
+                            fill: $black;
+                        }
+                        // &:hover{
+                        //     background: $black;
+                        //     .icon{
+                        //         fill: $white;
+                        //     }
+                        // }
+                    }
+                    &.dislike-btn{
+                        .icon{
+                            fill: $primary-color;
+                        }
+                        // &:hover{
+                        //     background: $primary-color;
+                        //     .icon{
+                        //         fill: $white;
+                        //     }
+                        // }
+                    }
+                }
+            }
+            .swipe {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                &:last-child{
+                    max-width: calc(100% - 25px);
+                    margin: -17px auto 0px;
+                    left: 0px;
+                    right: 0px;
+                    height: calc(100% + 35px);
+                    .card-image{
+                        height: 330px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width: auto;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+                .ant-card{
+                    text-align: center;
+                    border-radius: 10px;
+                    margin: auto;
+                    width: 100%;
+                    padding: 0;
+                    position: relative;
+                    border: 0;
+                    min-height: calc(100vh - 250px);
+                    .plane-icon{
+                        background: $white;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 36px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        right: 15px;
+                        top: 15px;
+                        .icon{
+                            width: 18px;
+                        }
+                    }
+                    .ant-card-body{
+                        padding: 0;
+                    }
+                    .card-image{
+                        background: $body-background;
+                        border-radius: 10px 10px 0 0;
+                        overflow: hidden;
+                        img{
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .card-bottom{
+                        padding: 0.8rem 1rem 0.8rem 1rem;
+                        text-align: left;
+                        a{
+                            color: $black;
+                            display: block;
+                            h4{
+                                margin-top: 0;
+                                font-size: 1.1rem;
+                                margin-bottom: 0;
+                                font-size: 1.2rem;
+                                text-align: left;
+                            }
+                        }
+                        p{
+                            font-size: 0.85rem;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+              
+            .cardContainer {
+                text-align: center;
+                border-radius: 10px;
+                max-width: 320px;
+                height: calc(100vh - 165px);
+                width: 100%;
+                margin: auto;
+                padding: 0;
+                position: relative;
+                box-shadow: 0 3px 60px rgba(0, 0, 0, 0.06);
+                img{
+                    width: 100%;
+                }
+            }
+              
+                    
+            .buttons button:hover {
+                transform: scale(1.05);
+            }
+              
+            @keyframes popup {
+                0%   { transform: scale(1,1) }
+                10%  { transform: scale(1.1,1.1) }
+                30%  { transform: scale(.9,.9) }
+                50%  { transform: scale(1,1) }
+                57%  { transform: scale(1,1) }
+                64%  { transform: scale(1,1) }
+                100% { transform: scale(1,1) }
+            }
+        }
+    }
+    .seemore-btn{
+        border-top: 1px solid $border-color-base;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        .ant-btn{
+            line-height: 42px;
+        }
+    }
+}
+
+.overlay-modal{
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 68px);
+    max-width: 767px;
+    z-index: 8;
+    .overlaymodal-inner{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        text-align: center;
+        .overlaymodal-upper{
+
+        }
+        .overlaymodal-middle{
+            p{
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $white;
+            }
+            .ant-btn{
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                height: 36px;
+                padding: 0 22px;
+                line-height: 36px;
+                font-weight: 600;
+                border-radius: 4px;
+                margin-top: 6px;
+            }
+        }
+        .overlaymodal-bottom{
+            padding-bottom: 1.5rem;
+            p{
+                color: #C2C2C2;
+                margin-bottom: 0;
+            }
+            .overlaymodal-action{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .dislike-btn{
+                    display: flex;
+                    align-items: center;
+                    color: $white;
+                    font-size: 18px;
+                    margin: 20px;
+                    svg{
+                        fill: $secondary-color;
+                        width: 29px;
+                        margin-right: 8px;
+                    }
+                }
+                .like-btn{
+                    display: flex;
+                    align-items: center;
+                    color: $white;
+                    font-size: 18px;
+                    margin: 20px;
+                    svg{
+                        fill: $primary-color;
+                        width: 29px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.callwrapper-swipe{
+    position: absolute;
+    z-index: 9;
+    background: #ffffff;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    padding-top: 0 !important;
+}
+.appcel {
+    position: initial !important;
+}
+
+.try-btn {
+    position: fixed;
+    bottom: 100px;
+    z-index: 999;
+    right: 20px;
+}

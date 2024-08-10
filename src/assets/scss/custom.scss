@@ -1,0 +1,289 @@
+/*
+*
+Setup
+*                                                           
+*/ 
+@import './variables.scss';
+
+html, body{
+    min-height: 100vh;
+    font-family: $font-family;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smoothing: antialiased !important;
+    font-feature-settings: normal !important;
+    font-variant:normal !important;
+    font-size: $font-size-base + 2;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+main{
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+.icon {
+  width: 16px;
+  height: auto;
+  fill: #000;
+  transition: fill 0.3s;
+  &.icon-white{
+    fill: #fff;
+  }
+}
+
+#root{
+  overflow-x: hidden;
+}
+
+.anchor-tag{
+  cursor: pointer;
+}
+
+.ant-btn{
+  box-shadow: none;
+  &.ant-btn-primary{
+    border: 1px solid $btn-border;
+    background: $black;
+    color: $white;
+    height: 42px;
+    line-height: 100%;
+    padding: 0 30px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    &.ant-btn-sm{
+      letter-spacing: 1px;
+      padding: 0 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+
+.screen-wrapper{
+  max-width: 767px;
+  margin: auto;
+  background: $body-background;
+  min-height: 100vh;
+  width: 100%;
+  .header-main{
+      width: 100%;
+      background: $white;
+      border-bottom: 1px solid $border-color-base;
+      padding:15px 18px;
+      // height: 68px;
+      position: fixed;
+      top: 9;
+      z-index: 2;
+      width: 100%;
+      max-width: 767px;
+      .header-inner{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .header-user{
+              display: flex;
+              align-items: center;
+              .back-icon{
+                  margin-right: 10px;
+              }
+              .user-image{
+                  position: relative;
+                  margin-right: 10px;
+                  .user-image-inner{
+                      width: 42px;
+                      height: 42px;
+                      overflow: hidden;
+                      img{
+                          width: 100%;
+                      }
+                  }
+                  .status{
+                      width: 12px;
+                      height: 12px;
+                      border-radius: 12px;
+                      border: 2px solid $white;
+                      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+                      display: block;
+                      background: $success-color;
+                      position: absolute;
+                      right: 0;
+                      bottom: 0;
+                  }
+              }
+              .user-name{
+                  font-size: 1.1rem;
+              }
+          }
+          .header-right{
+              display: flex;
+              align-items: center;
+              .user-like{
+                  text-transform: uppercase;
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: $black;
+                  span{
+                      color: $primary-color;
+                  }
+              }
+              .call-link{
+                  svg{
+                      width: 29px;
+                      fill: $success-color;
+                      stroke: $white;
+                  }
+              }
+          }
+      }
+  }
+  .content-wrapper{
+      min-height: calc(100vh - 68px);
+      padding-top: 68px;
+  }
+}
+
+.chat-wrapper{
+  .chat-list{
+      list-style-type: none;
+      padding-left: 0;
+      min-height: calc(100vh - 170px);
+      display: flex;
+      align-items: flex-end;
+      margin: 0;
+      li{
+          display: flex;
+          margin: 10px 0;
+          padding: 0 10px;
+          &.chat-left{
+              .chat-avatar{
+                  width: 32px;
+                  height: 32px;
+                  margin-right: 10px;
+                  min-width: 32px;
+                  .icon{
+                      width: 100%;
+                  }
+              }
+              .message{
+                  background: $white;
+                  border-radius: 20px;
+                  padding: 15px;
+                  display: inline-block;
+              }
+          }
+          &.chat-right{
+              flex-direction: row-reverse;
+              .chat-avatar{
+                  width: 32px;
+                  height: 32px;
+                  margin-right: 10px;
+                  border-radius: 32px;
+                  min-width: 32px;
+                  .icon{
+                      width: 100%;
+                  }
+                  img{
+                      width: 100%;
+                  }
+              }
+              .message{
+                  background: $white;
+                  border-radius: 20px;
+                  padding: 15px;
+                  display: inline-block;
+                  text-align: right;
+              }
+          }
+      }
+  }
+  .chat-bottom{
+      width: 94%;
+      margin: auto;
+      padding: 10px;
+      position: fixed;
+      bottom: 10px;
+      background: $white; 
+      border-radius: 50px;
+      left: 0;
+      right: 0;
+      max-width: 767px;
+      .chat-picker{
+          position: absolute;
+          bottom: 80px;
+      }
+      .chat-bottom-inner{
+          display: flex;
+          align-items: center;
+          .icon-toogle{
+              .icon{
+                  width: 42px;
+              }
+          }
+          .ant-input{
+              border: 0;
+              font-size: 16px;
+              &::-webkit-input-placeholder{
+                  color: black;
+              }
+              &::-moz-input-placeholder{
+                  color: black;
+              }
+              &::-ms-input-placeholder{
+                  color: black;
+              }
+          }
+          .right-action{
+              display: flex;
+              align-items: center;
+              .attach-toogle{
+                  position: relative;
+                  right: 20px;
+                  bottom: 13px;
+                  .ant-upload{
+                      position: absolute;
+                      left: 0;
+                  }
+                  .ant-upload-list-text-container{
+                      position: fixed;
+                      width: 94%;
+                      left: 3%;
+                      background: $white;
+                      border-radius: 30px;
+                      bottom: 20px;
+                      height: 52px;
+                      .ant-upload-list-item-info{
+                          .ant-upload-list-item-card-actions{
+                              padding: 0;
+                              .ant-btn{
+                                  padding: 0;
+                                  background: none;
+                                  border: 0;
+                              }
+                          }
+                      }
+                  }
+                  .icon{
+                      width: 17px;
+                  }
+              }
+              .mice-toogle{
+                  margin-left: 8px;
+                  .icon{
+                      width: 17px;
+                  }
+              }
+          }
+      }
+  }
+}
